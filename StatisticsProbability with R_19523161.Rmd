@@ -1,0 +1,159 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(ISLR)
+library(lsr)
+```
+
+```{r}
+dataCredit <- Credit
+head(dataCredit)
+```
+
+#1 Mean and Median of Rating, Cards, and Age
+```{r}
+mean(dataCredit$Rating)
+```
+```{r}
+mean(dataCredit$Cards)
+```
+```{r}
+mean(dataCredit$Age)
+```
+```{r}
+median(dataCredit$Rating)
+```
+```{r}
+median(dataCredit$Cards)
+```
+```{r}
+median(dataCredit$Age)
+```
+
+#2 Mode of Gender, Student, and Married
+```{r}
+modeOf(dataCredit$Gender)
+```
+```{r}
+modeOf(dataCredit$Student)
+```
+```{r}
+modeOf(dataCredit$Married)
+```
+
+#3 Sample 10,37, and 91 Percentiles of Education
+Percentile 10
+```{r}
+quantile(x = dataCredit$Education, probs = 0.1)
+```
+Percentile 37
+```{r}
+quantile(x = dataCredit$Education, probs = 0.37)
+```
+Percentile 91
+```{r}
+quantile(x = dataCredit$Education, probs = 0.91)
+```
+#4 Quartiles of Balance and its corresponding boxplot
+Kuartil
+```{r}
+quantile(x = dataCredit$Balance, probs = c(0.25,0.50,0.75))
+```
+Boxplot
+```{r}
+boxplot(x = dataCredit$Balance)
+```
+#5 Correlation and the scatter plot between pairs of Limit and Rating, Age and Card, Income and Education
+Limit and Rating
+```{r}
+newData1 <- data.frame(Limit = dataCredit$Limit, Rating = dataCredit$Rating)
+newData1
+```
+```{r}
+cor(newData1)
+```
+```{r}
+plot(newData1$Limit, newData1$Rating)
+```
+Age and Card
+```{r}
+newData2 <- data.frame(Age = dataCredit$Age, Card = dataCredit$Cards)
+newData2
+```
+```{r}
+cor(newData2)
+```
+```{r}
+plot(newData2$Age, newData2$Card)
+```
+Income and Education
+```{r}
+newData3 <- data.frame(Income = dataCredit$Income, Education = dataCredit$Education)
+newData3
+```
+```{r}
+cor(newData3)
+```
+```{r}
+plot(newData3$Income, newData3$Education)
+```
+
+#6 Soal Probabilitas
+Sebuah dadu dilemparkan sebanyak 10 kali, tentukan probabilitas dari peristiwa muncul mata dadu 4 sebanyak 4 kali
+- n = 10, p = 1/6 (Peluang tiap sisi nya adalah sama yaitu 1/6), x = 4
+
+```{r}
+dbinom(x = 4, size = 10, prob = 1/6)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
