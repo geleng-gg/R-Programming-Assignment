@@ -1,0 +1,69 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+#Exercise 4
+```{r}
+#f(x) = sin(x)
+f1 <- function(x){
+  hasil <- sin(x)
+  return(hasil)
+}
+
+input <- -1:1
+plot(input, sapply(input, f1),type = "l", xlab = "x", ylab = "f(x)")
+
+## -1 <= input <= 1
+
+```
+
+```{r}
+#f(x) = log(x)
+f2 <- function(x){
+  hasil <- log(x)
+  return(hasil)
+}
+
+input <- 0:20
+plot(input, sapply(input, f2),type = "l", xlab = "x", ylab = "f(x)")
+
+##input > 0
+```
+
+```{r}
+#f(x)=akarx−2
+f3 <- function(x){
+  hasil <- sqrt(x) - 2
+  return(hasil)
+}
+input <- 20:40
+plot(input, sapply(input, f3),type = "l", xlab = "x", ylab = "f(x)")
+
+##input > 0
+```
+
+```{r}
+#f(x)=akarx−2
+f4 <- function(x){
+  hasil <- sqrt(x-2)
+  return(hasil)
+}
+input <- 0:10
+plot(input, sapply(input, f4),type = "l", xlab = "x", ylab = "f(x)")
+
+##input > 0
+```
+
+```{r}
+#f(x)=akar2−x
+f5 <- function(x){
+  hasil <- sqrt(2-x)
+  return(hasil)
+}
+input <- 2:20
+plot(input, sapply(input, f5),type = "l", xlab = "x", ylab = "f(x)")
+
+## input >= 2
+```
+
