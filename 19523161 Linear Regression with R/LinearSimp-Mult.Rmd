@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+```{r}
+data(iris)
+dim(iris)
+levels(iris$Species)
+head(iris)
+```
+```{r}
+new_dt <- subset(iris, select = c(Sepal.Length, Petal.Length))
+new_dt
+```
+```{r}
+fit <- lm(Sepal.Length~Petal.Length, data = iris)
+summary(fit)
+```
+```{r}
+library(predict3d)
+```
+```{r}
+ggPredict(fit)
+```
+
+
+```{r}
+fit2 <- lm(Sepal.Length ~ Petal.Length+Petal.Width, data = iris)
+summary(fit2)
+```
+```{r}
+library(predict3d)
+```
+```{r}
+ggPredict(fit2)
+```
+```{r}
+ggPredict(fit2, show.error = TRUE, facet.modx = TRUE)
+```
+
+
+
+
+
+
+
