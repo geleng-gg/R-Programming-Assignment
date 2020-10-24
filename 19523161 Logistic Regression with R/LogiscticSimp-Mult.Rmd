@@ -1,0 +1,50 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```{r}
+data(iris)
+dim(iris)
+levels(iris$Species)
+head(iris)
+```
+
+
+```{r}
+dt <- subset(iris, select = c(Sepal.Length, Sepal.Width, Petal.Width))
+dt
+```
+```{r}
+fit <- glm(formula = Petal.Width ~ Sepal.Length, data = iris)
+summary(fit)
+```
+```{r}
+library(ggplot2)
+```
+```{r}
+ggplot(dt, aes(x=Sepal.Length, y = Petal.Width)) + geom_point() + stat_smooth(method = "glm", method.args = list(), se = FALSE)
+```
+
+
+
+```{r}
+fit2 <- glm(formula = Petal.Width ~ Sepal.Length+Sepal.Width, data = iris)
+summary(fit2)
+```
+```{r}
+library(predict3d)
+ggPredict(fit2)
+```
+
+
+
+
+
+
+
+
+
